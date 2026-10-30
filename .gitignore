@@ -31,7 +31,16 @@ yarn-error.*
 *.pem
 
 # local env files
+.env
 .env*.local
+
+# Supabase CLI link cache (project refs, pooler URLs, versions)
+supabase/.temp/
+
+# Native / store credentials — never commit
+google-services.json
+GoogleService-Info.plist
+credentials.json
 
 # typescript
 *.tsbuildinfo

@@ -5,22 +5,42 @@
 
 import '@/global.css';
 
-import { Platform } from 'react-native';
+import { Platform, StyleSheet, type ViewStyle } from 'react-native';
+
+export const Brand = {
+  ivory: '#FAF6F3',
+  blush: '#E7C8C2',
+  dustyRose: '#B97975',
+  espresso: '#463A3A',
+  white: '#FFFFFF',
+} as const;
 
 export const Colors = {
   light: {
-    text: '#000000',
-    background: '#ffffff',
-    backgroundElement: '#F0F0F3',
-    backgroundSelected: '#E0E1E6',
-    textSecondary: '#60646C',
+    text: Brand.espresso,
+    background: Brand.ivory,
+    backgroundElement: Brand.white,
+    backgroundSelected: Brand.blush,
+    textSecondary: '#6B5F5F',
+    primary: Brand.dustyRose,
+    onPrimary: Brand.espresso,
+    accent: Brand.blush,
+    surface: Brand.white,
+    border: '#E5D6D2',
+    danger: '#8C4F4C',
   },
   dark: {
-    text: '#ffffff',
-    background: '#000000',
-    backgroundElement: '#212225',
-    backgroundSelected: '#2E3135',
-    textSecondary: '#B0B4BA',
+    text: '#F5F0ED',
+    background: '#1C1B1D',
+    backgroundElement: '#29272A',
+    backgroundSelected: '#E7C8C2',
+    textSecondary: '#B9AFAD',
+    primary: '#E7C8C2',
+    onPrimary: '#1C1B1D',
+    accent: '#E7C8C2',
+    surface: '#29272A',
+    border: '#403B3E',
+    danger: '#D4A09C',
   },
 } as const;
 
@@ -63,3 +83,42 @@ export const Spacing = {
 
 export const BottomTabInset = Platform.select({ ios: 50, android: 80 }) ?? 0;
 export const MaxContentWidth = 800;
+
+export function cardElevationStyle(isDark: boolean): ViewStyle {
+  if (isDark) {
+    return {
+      borderWidth: StyleSheet.hairlineWidth,
+      borderColor: Colors.dark.border,
+      ...Platform.select({
+        android: { elevation: 0 },
+        default: {
+          shadowColor: 'transparent',
+          shadowOffset: { width: 0, height: 0 },
+          shadowOpacity: 0,
+          shadowRadius: 0,
+        },
+      }),
+    };
+  }
+
+  return (
+    Platform.select<ViewStyle>({
+      ios: {
+        shadowColor: Brand.espresso,
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.06,
+        shadowRadius: 12,
+      },
+      android: {
+        elevation: 2,
+        shadowColor: Brand.espresso,
+      },
+      default: {
+        shadowColor: Brand.espresso,
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.07,
+        shadowRadius: 14,
+      },
+    }) ?? {}
+  );
+}

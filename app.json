@@ -4,11 +4,12 @@
     "slug": "mivora",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/mivora-app-icon-1024.png",
     "scheme": "mivora",
     "userInterfaceStyle": "automatic",
     "ios": {
-      "icon": "./assets/expo.icon"
+      "icon": "./assets/images/mivora-app-icon-1024.png",
+      "bundleIdentifier": "com.mivora.app"
     },
     "android": {
       "adaptiveIcon": {
@@ -26,17 +27,58 @@
     "plugins": [
       "expo-router",
       [
+        "expo-image-picker",
+        {
+          "photosPermission": "Allow Mivora to choose a cover photo from your library.",
+          "cameraPermission": false,
+          "microphonePermission": false
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "color": "#B97975",
+          "enableRemoteNotifications": false,
+          "enableBackgroundRemoteNotifications": false
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Mivora uses your location once to show approximate straight-line distance to providers.",
+          "isIosBackgroundLocationEnabled": false,
+          "isAndroidBackgroundLocationEnabled": false,
+          "isAndroidForegroundServiceEnabled": false
+        }
+      ],
+      [
         "expo-splash-screen",
         {
-          "backgroundColor": "#208AEF",
-          "image": "./assets/images/splash-icon.png",
-          "imageWidth": 76
+          "backgroundColor": "#FAF6F3",
+          "image": "./assets/images/mivora-splash-logo.png",
+          "imageWidth": 200,
+          "dark": {
+            "backgroundColor": "#FAF6F3",
+            "image": "./assets/images/mivora-splash-logo.png"
+          }
         }
-      ]
+      ],
+      "@react-native-community/datetimepicker",
+      "expo-font",
+      "expo-image",
+      "expo-status-bar",
+      "expo-web-browser"
     ],
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "f4c39036-5d44-4bd2-b1d6-d51d9868be2e"
+      }
+    },
+    "owner": "mivora"
   }
 }

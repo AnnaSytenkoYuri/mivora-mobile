@@ -33,7 +33,9 @@ export function AnimatedSplashOverlay() {
     },
   });
 
-  const image = <Image style={styles.image} source={require('@/assets/images/expo-logo.png')} />;
+  const image = (
+    <Image style={styles.splashLogo} source={require('@/assets/images/mivora-splash-logo.png')} />
+  );
 
   return animate ? (
     <Animated.View
@@ -138,9 +140,13 @@ const styles = StyleSheet.create({
     height: 128,
     position: 'absolute',
   },
+  splashLogo: {
+    width: 200,
+    height: 100,
+  },
   splashOverlay: {
     ...StyleSheet.absoluteFill,
-    backgroundColor: '#208AEF',
+    backgroundColor: '#FAF6F3',
     alignItems: 'center',
     justifyContent: 'center',
     zIndex: 1000,

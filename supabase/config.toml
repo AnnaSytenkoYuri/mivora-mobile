@@ -1,0 +1,6 @@
+# Function-level settings only. Do not add pg_net, webhooks, or cron here.
+# verify_jwt is false only for deliver-booking-push. The function still
+# requires PUSH_DELIVERY_SECRET; user JWTs are not sufficient.
+
+[functions.deliver-booking-push]
+verify_jwt = false
