@@ -95,6 +95,13 @@ Time for bookings and working hours is treated as **Asia/Bangkok**.
 
 This file does **not** mean the app is submitted to the App Store or Google Play. Cloud builds and store submit are optional later steps (`eas build`, `eas submit`).
 
+## App Demo
+
+
+https://github.com/user-attachments/assets/07d57e22-be7a-4be1-a547-f1df695365f4
+
+
+
 ## Screenshots
 
 <table>
