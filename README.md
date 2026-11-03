@@ -97,7 +97,30 @@ This file does **not** mean the app is submitted to the App Store or Google Play
 
 ## Screenshots
 
-Product screenshots are not in this repository yet. When added, place PNG files under `docs/screenshots/` (for example `home.png`, `search.png`, `provider.png`, `booking.png`, `business.png`).
+<table>
+  <tr>
+    <td align="center" valign="top">
+      <p><strong>Home</strong></p>
+      <img src="docs/screenshots/home.png" width="180" alt="Mivora home screen" />
+    </td>
+    <td align="center" valign="top">
+      <p><strong>Search</strong></p>
+      <img src="docs/screenshots/search.png" width="180" alt="Mivora search screen" />
+    </td>
+    <td align="center" valign="top">
+      <p><strong>Provider Profile</strong></p>
+      <img src="docs/screenshots/provider.png" width="180" alt="Mivora provider profile" />
+    </td>
+    <td align="center" valign="top">
+      <p><strong>Booking</strong></p>
+      <img src="docs/screenshots/booking.png" width="180" alt="Mivora booking screen" />
+    </td>
+    <td align="center" valign="top">
+      <p><strong>Business Dashboard</strong></p>
+      <img src="docs/screenshots/business.png" width="180" alt="Mivora business dashboard" />
+    </td>
+  </tr>
+</table>
 
 ## Installation and local development
 
